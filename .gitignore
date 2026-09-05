@@ -1,0 +1,40 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environment / secrets
+.env
+*.env
+backend/.env
+frontend/.env
+
+# Keep example environment files
+!backend/.env.example
+!frontend/.env.example
+
+# Node
+node_modules/
+dist/
+build/
+.vite/
+coverage/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Database/local runtime files
+*.sqlite
+*.sqlite3

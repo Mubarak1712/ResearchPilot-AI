@@ -1,0 +1,108 @@
+.app-shell {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 8% 0%, rgb(243 223 208 / 65%), transparent 28rem),
+    radial-gradient(circle at 92% 22%, rgb(229 216 232 / 72%), transparent 32rem),
+    #f2eef4;
+}
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  min-height: 76px;
+  padding: 0.9rem max(1.25rem, calc((100% - 78rem) / 2));
+  color: var(--ink);
+  background: rgb(255 253 248 / 88%);
+  border-bottom: 1px solid rgb(217 207 220 / 75%);
+  backdrop-filter: blur(14px);
+}
+
+.app-brand {
+  color: var(--plum-deep);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+}
+
+.app-brand::after {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin: 0 0 0.15rem 0.25rem;
+  content: "";
+  background: #c79c88;
+  border-radius: 50%;
+}
+
+.app-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.45rem;
+  margin-left: auto;
+}
+
+.app-nav a {
+  position: relative;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.app-nav a:hover { color: var(--plum-deep); }
+.app-nav a::after {
+  position: absolute;
+  right: 0;
+  bottom: -0.55rem;
+  left: 0;
+  height: 2px;
+  content: "";
+  background: var(--plum);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transition: transform 160ms ease;
+}
+.app-nav a:hover::after { transform: scaleX(1); }
+
+.auth-navigation { display: flex; align-items: center; gap: 0.8rem; }
+.auth-user, .auth-status { color: var(--muted); font-size: 0.82rem; }
+.auth-user { max-width: 13rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.app-header button, .auth-panel form button {
+  min-height: 42px;
+  padding: 0.65rem 1rem;
+  color: var(--ivory);
+  font-weight: 750;
+  cursor: pointer;
+  background: var(--plum);
+  border: 1px solid var(--plum);
+  border-radius: 0.55rem;
+  transition: transform 160ms ease, background 160ms ease;
+}
+.app-header button:hover, .auth-panel form button:hover:not(:disabled) {
+  background: var(--plum-deep);
+  transform: translateY(-1px);
+}
+
+.auth-loading {
+  min-height: 100vh;
+  padding: 8rem 1.5rem;
+  color: var(--muted);
+  background: #f2eef4;
+  text-align: center;
+}
+.auth-loading h1 { margin: 0.7rem 0; color: var(--plum-deep); font-family: Georgia, serif; }
+.auth-loading p:last-child { margin: 0; }
+
+@media (max-width: 700px) {
+  .app-header { flex-wrap: wrap; gap: 0.7rem 1rem; padding-block: 0.8rem; }
+  .app-nav { order: 3; width: 100%; justify-content: space-between; margin-left: 0; }
+  .app-nav a::after { bottom: -0.25rem; }
+  .auth-user { max-width: 8rem; }
+}
